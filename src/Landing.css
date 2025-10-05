@@ -1,6 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
 body{
     background-color: #000010;
     min-height: 100vh; 
-    
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }   
 
+.landing-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    padding-top: 100px; /* Account for fixed navbar */
+}
+
+.landing-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.intro-text {
+    text-align: center;
+    color: white;
+}
+
+.full-intro {
+    font-size: 4.5rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+    min-height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.intro-line {
+    color: white;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 100%;
+    font-family: 'Figtree', sans-serif;
+}
+
+.dynamic-text {
+    display: inline-block;
+    font-weight: 500;
+    text-align: left;
+    font-family: 'Figtree', sans-serif;
+    white-space: nowrap;
+}
+
+.dynamic-text .job-title-text {
+    color: #8b5cf6;
+}
+
+.cursor {
+    color: #8b5cf6;
+    animation: blink 1s infinite;
+    display: inline;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+@media (max-width: 768px) {
+    .full-intro {
+        font-size: 3rem;
+        min-height: 6rem;
+        padding: 0 1.5rem;
+        max-width: 100%;
+    }
+    
+    .intro-line {
+        height: 3rem;
+    }
+    
+    .job-title-text {
+        min-width: 400px;
+    }
+    
+    .landing-container {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .full-intro {
+        font-size: 2.5rem;
+        min-height: 5rem;
+        padding: 0 1.5rem;
+    }
+    
+    .intro-line {
+        height: 2.5rem;
+    }
+    
+    .job-title-text {
+        min-width: 300px;
+    }
+}
