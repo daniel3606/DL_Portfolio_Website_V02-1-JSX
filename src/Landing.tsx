@@ -1,59 +1,89 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef, useState } from "react";
 import "./Landing.css";
+import "./Components/Navbar"
+
+// Move this outside so its identity is stable
+const JOB_TITLES = ["UI/UX Designer", "Frontend Developer", "Product Designer"];
 
 function Landing() {
-  const [currentJobTitle, setCurrentJobTitle] = useState(0);
+  const [currentJobTitleIdx, setCurrentJobTitleIdx] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [displayedJobTitle, setDisplayedJobTitle] = useState('');
-  
-  const jobTitles = [
-    "UI/UX Designer",
-    "Frontend Developer", 
-    "Product Designer"
-  ];
+  const [displayedJobTitle, setDisplayedJobTitle] = useState("");
 
-  const baseText = "Hello! I'm Daniel Lim\nI'm am a";
+  // useRef for timeout id to avoid stale clears
+  const timeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
-    let timeout: number;
-    const currentTitle = jobTitles[currentJobTitle];
-    
+    const currentTitle = JOB_TITLES[currentJobTitleIdx];
+
+    const schedule = (fn: () => void, ms: number) => {
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+      timeoutRef.current = window.setTimeout(fn, ms);
+    };
+
     if (isDeleting) {
-      if (displayedJobTitle === '') {
+      if (displayedJobTitle === "") {
         setIsDeleting(false);
-        setCurrentJobTitle((prev) => (prev + 1) % jobTitles.length);
+        setCurrentJobTitleIdx((i) => (i + 1) % JOB_TITLES.length);
       } else {
-        timeout = setTimeout(() => {
-          setDisplayedJobTitle(prev => prev.slice(0, -1));
+        schedule(() => {
+          setDisplayedJobTitle((prev) => prev.slice(0, -1));
         }, 50);
       }
     } else {
       if (displayedJobTitle.length < currentTitle.length) {
-        timeout = setTimeout(() => {
-          setDisplayedJobTitle(prev => prev + currentTitle[displayedJobTitle.length]);
+        schedule(() => {
+          setDisplayedJobTitle(
+            (prev) => prev + currentTitle[displayedJobTitle.length]
+          );
         }, 100);
       } else {
-        timeout = setTimeout(() => {
-          setIsDeleting(true);
-        }, 2000);
+        schedule(() => setIsDeleting(true), 2000);
       }
     }
 
-    return () => clearTimeout(timeout);
-  }, [displayedJobTitle, isDeleting, currentJobTitle, jobTitles]);
+    return () => {
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+    };
+  }, [displayedJobTitle, isDeleting, currentJobTitleIdx]);
 
   return (
-    <div className="landing-container">
-      <div className="landing-content">
-        <div className="intro-text">
-          <div className="full-intro">
-            <div className="intro-line">Hello! I'm Daniel Lim</div>
-          <div className="intro-line">
-            <span className="dynamic-text">I'm am a <span className="job-title-text">{displayedJobTitle}</span><span className="cursor">|</span></span>
-          </div>
+    <div className="snap-container">
+      {/* Section 1 */}
+      <section className="snap-page hero">
+        <div className="landing-content">
+          <div className="intro-text">
+            <div className="full-intro">
+              <div className="intro-line">This is me, Daniel Lim</div>
+              <div className="intro-line">
+                <span className="dynamic-text">
+                  I&apos;m a{" "}
+                  <span className="job-title-text">{displayedJobTitle}</span>
+                  <span className="cursor" aria-hidden="true">
+                    |
+                  </span>
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Section 2 */}
+      <section className="snap-page">
+        <div className="section-content">
+          <h2>Page 2</h2>
+          <p>Your content here.</p>
+        </div>
+      </section>
+
+      {/* Section 3 */}
+      <section className="snap-page">
+        <div className="section-content">
+          <h2>Page 3</h2>
+          <p>More content here.</p>
+        </div>
+      </section>
     </div>
   );
 }

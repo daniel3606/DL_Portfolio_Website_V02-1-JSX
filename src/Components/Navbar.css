@@ -71,6 +71,14 @@
   width: 100%;
 }
 
+.navbar-link.active {
+  color: #8b5cf6;
+}
+
+.navbar-link.active::after {
+  width: 100%;
+}
+
 .navbar-button {
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   color: white;

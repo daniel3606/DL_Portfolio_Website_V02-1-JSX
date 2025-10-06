@@ -12,6 +12,37 @@ body{
     -moz-osx-font-smoothing: grayscale;
 }   
 
+html, body, #root {
+  height: 100%;
+}
+
+/* Optional: smooth scroll between snaps */
+:root { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+}
+
+.snap-container {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.snap-page{
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.snap-stop{
+    scroll-snap-stop: always;
+}
+
 .landing-container {
     display: flex;
     justify-content: center;
