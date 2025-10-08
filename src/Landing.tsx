@@ -36,7 +36,7 @@ function Landing() {
           setDisplayedJobTitle(
             (prev) => prev + currentTitle[displayedJobTitle.length]
           );
-        }, 100);
+        }, 75);
       } else {
         schedule(() => setIsDeleting(true), 2000);
       }
@@ -53,15 +53,16 @@ function Landing() {
       <section className="snap-page hero">
         <div className="landing-content">
           <div className="intro-text">
+            {/* Background layer */}
+            <div className="background-circle" aria-hidden="true" />
+            
+            {/* Foreground content */}
             <div className="full-intro">
               <div className="intro-line">This is me, Daniel Lim</div>
               <div className="intro-line">
                 <span className="dynamic-text">
-                  I&apos;m a{" "}
-                  <span className="job-title-text">{displayedJobTitle}</span>
-                  <span className="cursor" aria-hidden="true">
-                    |
-                  </span>
+                  I&apos;m a <span className="job-title-text">{displayedJobTitle}</span>
+                  <span className="cursor" aria-hidden="true">|</span>
                 </span>
               </div>
             </div>
@@ -73,7 +74,7 @@ function Landing() {
       <section className="snap-page">
         <div className="section-content">
           <h2>Page 2</h2>
-          <p>Your content here.</p>
+          <div>Some content here.</div>
         </div>
       </section>
 

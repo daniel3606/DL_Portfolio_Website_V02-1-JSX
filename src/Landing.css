@@ -10,18 +10,14 @@ body{
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}   
+    overflow-x: hidden;
+}
 
 html, body, #root {
   height: 100%;
 }
 
-/* Optional: smooth scroll between snaps */
-:root { scroll-behavior: smooth; }
-@media (prefers-reduced-motion: reduce) {
-  :root { scroll-behavior: auto; }
-}
-
+/* Snap scrolling container */
 .snap-container {
     height: 100vh;
     overflow-y: auto;
@@ -29,7 +25,7 @@ html, body, #root {
     -webkit-overflow-scrolling: touch;
 }
 
-.snap-page{
+.snap-page {
     height: 100vh;
     scroll-snap-align: start;
     display: flex;
@@ -39,8 +35,25 @@ html, body, #root {
     box-sizing: border-box;
 }
 
-.snap-stop{
+.snap-stop {
     scroll-snap-stop: always;
+}
+
+.section-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Optional: smooth scroll between snaps */
+:root { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+}
+
+.snap-page.hero {
+    background: #000010;
+    padding: 100px 3rem 3rem 3rem;
 }
 
 .landing-container {
@@ -49,7 +62,7 @@ html, body, #root {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    padding-top: 100px; /* Account for fixed navbar */
+    padding-top: 100px;
 }
 
 .landing-content {
@@ -63,9 +76,12 @@ html, body, #root {
 .intro-text {
     text-align: center;
     color: white;
+    position: relative;
 }
 
 .full-intro {
+    position: relative;
+    z-index: 1;
     font-size: 4.5rem;
     font-weight: 500;
     color: white;
@@ -80,6 +96,28 @@ html, body, #root {
     margin: 0 auto;
     padding: 0 1.5rem;
     font-family: 'Figtree', sans-serif;
+}
+
+/* The circle is now a background layer, not in layout flow */
+.background-circle {
+  position: absolute;
+  inset: 0;                 /* covers the intro-text box (you can center instead) */
+  pointer-events: none;     /* won’t block clicks */
+  z-index: 0;
+}
+
+/* Draw a centered outlined circle */
+.background-circle::before {
+  content: "";
+  position: absolute;
+  width: 150vw;             /* size the circle */
+  height: 150vw;
+  border: 2px solid #8b5cf6;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -90%);
+  box-shadow: 0 0 40px 10px #8b5cf6;
 }
 
 .intro-line {
@@ -118,7 +156,7 @@ html, body, #root {
 
 @media (max-width: 768px) {
     .full-intro {
-        font-size: 3rem;
+        font-size: 2.5rem;
         min-height: 6rem;
         padding: 0 1.5rem;
         max-width: 100%;
@@ -150,5 +188,287 @@ html, body, #root {
     
     .job-title-text {
         min-width: 300px;
+    }
+}
+
+/* Section 2 - Featured Projects */
+.snap-page.projects-overview {
+    background: #000010;
+    padding: 100px 3rem 3rem 3rem;
+}
+
+
+.projects-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.projects-header h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.projects-header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    font-family: 'Figtree', sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.featured-projects-container {
+    position: relative;
+    height: 400px;
+    margin-bottom: 3rem;
+    perspective: 1000px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+}
+
+.featured-projects-container::-webkit-scrollbar {
+    display: none;
+}
+
+.featured-projects-container:active {
+    cursor: grabbing;
+}
+
+.featured-projects-grid {
+    display: flex;
+    gap: 2rem;
+    height: 100%;
+    align-items: center;
+    padding: 0 2rem;
+    min-width: max-content;
+}
+
+.featured-project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+    flex: 0 0 300px;
+    height: 350px;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.featured-project-card:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+.project-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.featured-project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-details {
+    padding: 1.5rem;
+}
+
+.project-details h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.project-details p {
+    color: #cccccc;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: rgba(139, 92, 246, 0.2);
+    color: #8b5cf6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    font-family: 'Figtree', sans-serif;
+}
+
+.projects-cta {
+    text-align: center;
+}
+
+.cta-button {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-family: 'Figtree', sans-serif;
+    display: inline-block;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+}
+
+/* Section 3 - Interests */
+.snap-page.interests {
+    background: #000010;
+    padding: 100px 3rem 3rem 3rem;
+}
+
+
+.interests-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.interests-header h2 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.interests-header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    font-family: 'Figtree', sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.interest-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.interest-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(139, 92, 246, 0.2);
+}
+
+.interest-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.interest-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+    font-family: 'Figtree', sans-serif;
+}
+
+.interest-card p {
+    color: #cccccc;
+    line-height: 1.6;
+    font-family: 'Figtree', sans-serif;
+}
+
+/* Footer */
+.footer {
+    background: #000010;
+    padding: 2rem 3rem;
+    border-top: 1px solid rgba(139, 92, 246, 0.2);
+    margin-top: 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footer-content p {
+    color: #cccccc;
+    font-family: 'Figtree', sans-serif;
+    margin: 0;
+}
+
+/* Mobile Responsive for new sections */
+@media (max-width: 768px) {
+    .snap-page.projects-overview,
+    .snap-page.interests {
+        padding: 100px 1.5rem 1.5rem 1.5rem;
+    }
+    
+    .projects-header h2,
+    .interests-header h2 {
+        font-size: 2.5rem;
+    }
+    
+    .projects-header p,
+    .interests-header p {
+        font-size: 1rem;
+    }
+    
+    .featured-project-card {
+        flex: 0 0 250px;
+        height: 300px;
+    }
+    
+    .interests-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer {
+        padding: 2rem 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-header h2,
+    .interests-header h2 {
+        font-size: 2rem;
+    }
+    
+    .interest-card {
+        padding: 1.5rem;
+    }
+    
+    .interest-icon {
+        font-size: 2.5rem;
     }
 }
