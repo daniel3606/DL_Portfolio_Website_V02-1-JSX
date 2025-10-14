@@ -121,50 +121,6 @@ function AdditionalInfo() {
               ))}
             </div>
           </section>
-
-          {/* Certifications Section */}
-          <section className="info-section">
-            <h2>Certifications</h2>
-            <div className="certifications-grid">
-              {certifications.map((cert, index) => (
-                <div key={index} className="certification-item">
-                  <span className="cert-icon">🏆</span>
-                  <span className="cert-name">{cert}</span>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Interests Section */}
-          <section className="info-section">
-            <h2>Interests & Hobbies</h2>
-            <div className="interests-grid">
-              <div className="interest-item">
-                <span className="interest-icon">🎨</span>
-                <span>Digital Art & Design</span>
-              </div>
-              <div className="interest-item">
-                <span className="interest-icon">📚</span>
-                <span>Continuous Learning</span>
-              </div>
-              <div className="interest-item">
-                <span className="interest-icon">🏃‍♂️</span>
-                <span>Running & Fitness</span>
-              </div>
-              <div className="interest-item">
-                <span className="interest-icon">☕</span>
-                <span>Coffee Enthusiast</span>
-              </div>
-              <div className="interest-item">
-                <span className="interest-icon">🎵</span>
-                <span>Music Production</span>
-              </div>
-              <div className="interest-item">
-                <span className="interest-icon">🌱</span>
-                <span>Gardening</span>
-              </div>
-            </div>
-          </section>
         </div>
       </div>
     </div>

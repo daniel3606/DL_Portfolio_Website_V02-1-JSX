@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Contact.css';
+import emailjs from 'emailjs-com';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -16,13 +17,25 @@ function Contact() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', subject: '', message: '' });
-  };
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  emailjs.send(
+    'service_9m2beit',
+    'template_r58z7c7',
+    formData,
+    'IWauOUFwAXLu6hW7l'
+  ).then(
+    () => {
+      alert('Message sent successfully!');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    },
+    (error) => {
+      console.error('Error sending email:', error);
+      alert('There was a problem sending your message.');
+    }
+  );
+};
 
   return (
     <div className="contact-container">
@@ -36,25 +49,27 @@ function Contact() {
           <div className="contact-info">
             <div className="contact-item">
               <h3>Email</h3>
-              <p>daniel.lim@email.com</p>
+              <p>daniel2060306@gmail.com</p>
+              <p>dllim@umich.edu</p>
             </div>
             <div className="contact-item">
               <h3>Phone</h3>
-              <p>+1 (555) 123-4567</p>
+              <p>+1 (248) 220-9668</p>
             </div>
             <div className="contact-item">
               <h3>Location</h3>
-              <p>San Francisco, CA</p>
+              <p>Troy, MI</p>
+              <p>Ann Arbor, MI</p>
             </div>
             <div className="social-links">
-              <a href="https://github.com" className="social-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/daniel3606" className="social-link" target="_blank" rel="noopener noreferrer">
                 GitHub
               </a>
-              <a href="https://linkedin.com" className="social-link" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/daniel-lim0306/" className="social-link" target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href="https://twitter.com" className="social-link" target="_blank" rel="noopener noreferrer">
-                Twitter
+              <a href="https://www.instagram.com/daniel.lim.06/" className="social-link" target="_blank" rel="noopener noreferrer">
+                Instagram
               </a>
             </div>
           </div>
