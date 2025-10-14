@@ -39,9 +39,10 @@ function Landing() {
   }, []);
 
   return (
-    <div className="snap-container">
-      {/* Section 1 */}
-      <section className="snap-page hero">
+    <>
+      <div className="snap-container">
+        {/* Section 1 */}
+        <section className="snap-page hero">
         <div className="landing-content">
           <div className="intro-text">
             {/* Background layer */}
@@ -79,35 +80,34 @@ function Landing() {
       </section>
 
       {/* Section 3 */}
-      <section className="snap-page">
-        <div className="section-content">
-          <h2>Page 3</h2>
-          <p>More content here.</p>
-        </div>
-      </section>
+        <section className="snap-page">
+          <div className="section-content">
+            <h2>Page 3</h2>
+            <p>More content here.</p>
+          </div>
+        </section>
+      </div>
 
       {/* Scroll Navigation Arrows */}
-      <div className="scroll-navigation">
-        {currentPage > 0 && (
-          <button 
-            className="scroll-arrow scroll-arrow-up"
-            onClick={() => scrollToPage(currentPage - 1)}
-            aria-label="Scroll up"
-          >
-            ↑
-          </button>
-        )}
-        {currentPage < totalPages - 1 && (
-          <button 
-            className="scroll-arrow scroll-arrow-down"
-            onClick={() => scrollToPage(currentPage + 1)}
-            aria-label="Scroll down"
-          >
-            ↓
-          </button>
-        )}
-      </div>
-    </div>
+      {currentPage > 0 && (
+        <button 
+          className="scroll-arrow scroll-arrow-up"
+          onClick={() => scrollToPage(currentPage - 1)}
+          aria-label="Scroll up"
+        >
+          ↑
+        </button>
+      )}
+      {currentPage < totalPages - 1 && (
+        <button 
+          className="scroll-arrow scroll-arrow-down"
+          onClick={() => scrollToPage(currentPage + 1)}
+          aria-label="Scroll down"
+        >
+          ↓
+        </button>
+      )}
+    </>
   );
 }
 
