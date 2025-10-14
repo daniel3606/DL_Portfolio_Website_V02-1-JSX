@@ -1,11 +1,43 @@
 // src/Landing.tsx
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import TextType from "./Components/TextType";
 
 const JOB_TITLES = ["UI/UX Designer", "Frontend Developer", "Product Designer"];
 
 function Landing() {
+  const [currentPage, setCurrentPage] = useState(0);
+  const totalPages = 3;
+
+  const scrollToPage = (pageIndex: number) => {
+    const container = document.querySelector('.snap-container');
+    if (container) {
+      const pageHeight = window.innerHeight;
+      container.scrollTo({
+        top: pageHeight * pageIndex,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleScroll = () => {
+    const container = document.querySelector('.snap-container');
+    if (container) {
+      const scrollPosition = container.scrollTop;
+      const pageHeight = window.innerHeight;
+      const currentPageIndex = Math.round(scrollPosition / pageHeight);
+      setCurrentPage(currentPageIndex);
+    }
+  };
+
+  useEffect(() => {
+    const container = document.querySelector('.snap-container');
+    if (container) {
+      container.addEventListener('scroll', handleScroll);
+      return () => container.removeEventListener('scroll', handleScroll);
+    }
+  }, []);
+
   return (
     <div className="snap-container">
       {/* Section 1 */}
@@ -53,6 +85,28 @@ function Landing() {
           <p>More content here.</p>
         </div>
       </section>
+
+      {/* Scroll Navigation Arrows */}
+      <div className="scroll-navigation">
+        {currentPage > 0 && (
+          <button 
+            className="scroll-arrow scroll-arrow-up"
+            onClick={() => scrollToPage(currentPage - 1)}
+            aria-label="Scroll up"
+          >
+            ↑
+          </button>
+        )}
+        {currentPage < totalPages - 1 && (
+          <button 
+            className="scroll-arrow scroll-arrow-down"
+            onClick={() => scrollToPage(currentPage + 1)}
+            aria-label="Scroll down"
+          >
+            ↓
+          </button>
+        )}
+      </div>
     </div>
   );
 }
