@@ -1,0 +1,61 @@
+.custom-cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0.4) 50%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.1s ease;
+  opacity: 0;
+}
+
+.custom-cursor.visible {
+  opacity: 1;
+}
+
+.custom-cursor-glow {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.1) 40%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  filter: blur(2px);
+}
+
+.custom-cursor-glow.visible {
+  opacity: 1;
+}
+
+/* Hide default cursor on interactive elements */
+.custom-cursor ~ * {
+  cursor: none;
+}
+
+/* Show default cursor on text inputs and textareas */
+input, textarea {
+  cursor: text !important;
+}
+
+/* Show pointer cursor on links and buttons */
+a, button {
+  cursor: pointer !important;
+}
+
+/* Mobile - hide custom cursor */
+@media (max-width: 768px) {
+  .custom-cursor,
+  .custom-cursor-glow {
+    display: none;
+  }
+  
+  .custom-cursor ~ * {
+    cursor: auto;
+  }
+}
