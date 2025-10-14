@@ -1,17 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import YouTube, { YouTubeProps } from 'react-youtube';
+import YouTube from 'react-youtube';
 import './StudyHelper.css';
 
-interface Theme {
-  name: string;
-  youtubeId: string;
-  color: string;
-  icon: string;
-  backgroundImage: string;
-}
-
 function StudyHelper() {
-  const themes: Theme[] = [
+  const themes = [
     {
       name: 'Jazz',
       youtubeId: 'Dx5qFachd3A',
@@ -70,7 +62,7 @@ function StudyHelper() {
     }
   ];
 
-  const [selectedTheme, setSelectedTheme] = useState<Theme | null>(null);
+  const [selectedTheme, setSelectedTheme] = useState(null);
   const [volume, setVolume] = useState(50);
   const [showVolumeControl, setShowVolumeControl] = useState(false);
   const [showSidebar, setShowSidebar] = useState(true);
@@ -78,12 +70,12 @@ function StudyHelper() {
   const [timerSeconds, setTimerSeconds] = useState(0);
   const [targetMinutes, setTargetMinutes] = useState(25);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const playerRef = useRef<any>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const playerRef = useRef(null);
+  const containerRef = useRef(null);
 
   // Timer logic
   useEffect(() => {
-    let interval: number;
+    let interval;
     if (isTimerRunning) {
       interval = window.setInterval(() => {
         setTimerSeconds((prev) => prev + 1);
@@ -92,18 +84,18 @@ function StudyHelper() {
     return () => clearInterval(interval);
   }, [isTimerRunning]);
 
-  const formatTime = (seconds: number) => {
+  const formatTime = (seconds) => {
     const hrs = Math.floor(seconds / 3600);
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
     return `${hrs.toString().padStart(2, '0')}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
   };
 
-  const handleThemeSelect = (theme: Theme) => {
+  const handleThemeSelect = (theme) => {
     setSelectedTheme(theme);
   };
 
-  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVolumeChange = (e) => {
     const newVolume = parseInt(e.target.value);
     setVolume(newVolume);
     if (playerRef.current) {
@@ -111,14 +103,14 @@ function StudyHelper() {
     }
   };
 
-  const onPlayerReady: YouTubeProps['onReady'] = (event) => {
+  const onPlayerReady = (event) => {
     playerRef.current = event.target;
     event.target.setVolume(volume);
     event.target.unMute();
     event.target.playVideo();
   };
 
-  const opts: YouTubeProps['opts'] = {
+  const opts = {
     height: '0',
     width: '0',
     playerVars: {

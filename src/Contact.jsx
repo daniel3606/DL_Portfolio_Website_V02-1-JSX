@@ -10,32 +10,32 @@ function Contact() {
     message: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  emailjs.send(
-    'service_9m2beit',
-    'template_r58z7c7',
-    formData,
-    'IWauOUFwAXLu6hW7l'
-  ).then(
-    () => {
-      alert('Message sent successfully!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    },
-    (error) => {
-      console.error('Error sending email:', error);
-      alert('There was a problem sending your message.');
-    }
-  );
-};
+    emailjs.send(
+      'service_9m2beit',
+      'template_r58z7c7',
+      formData,
+      'IWauOUFwAXLu6hW7l'
+    ).then(
+      () => {
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      },
+      (error) => {
+        console.error('Error sending email:', error);
+        alert('There was a problem sending your message.');
+      }
+    );
+  };
 
   return (
     <div className="contact-container">
@@ -132,3 +132,4 @@ const handleSubmit = (e: React.FormEvent) => {
 }
 
 export default Contact;
+

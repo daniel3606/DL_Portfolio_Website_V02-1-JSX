@@ -1,4 +1,4 @@
-// src/Landing.tsx
+// src/Landing.jsx
 import React, { useState, useEffect } from "react";
 import "./Landing.css";
 import TextType from "./Components/TextType";
@@ -9,7 +9,7 @@ function Landing() {
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = 3;
 
-  const scrollToPage = (pageIndex: number) => {
+  const scrollToPage = (pageIndex) => {
     const container = document.querySelector('.snap-container');
     if (container) {
       const pageHeight = window.innerHeight;
@@ -112,3 +112,4 @@ function Landing() {
 }
 
 export default Landing;
+
