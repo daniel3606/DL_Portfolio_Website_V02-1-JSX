@@ -1,9 +1,7 @@
-// src/Components/TextType.tsx
 import { useEffect, useRef, useState } from "react";
 
 type TextTypeProps = {
   text: string[];
-  as?: string;
   typingSpeed?: number;
   initialDelay?: number;
   pauseDuration?: number;
@@ -11,8 +9,8 @@ type TextTypeProps = {
   showCursor?: boolean;
   cursorCharacter?: string;
   reverseMode?: boolean;
-  variableSpeed?: boolean;            // <- make optional
-  onSentenceComplete?: () => void;    // <- make optional
+  variableSpeed?: boolean;
+  onSentenceComplete?: () => void;
   className?: string;
 };
 
@@ -33,10 +31,8 @@ export default function TextType({
   const [idx, setIdx] = useState(0);
   const [phase, setPhase] = useState<"typing" | "pausing" | "deleting">("typing");
 
-  // Use a ref and a portable timeout type
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const clearRunningTimeout = () => {
+  const clearTimer = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
@@ -58,9 +54,11 @@ export default function TextType({
         onSentenceComplete?.();
       }
     } else if (phase === "pausing") {
-      timeoutRef.current = setTimeout(() => setPhase(reverseMode ? "deleting" : "typing"), pauseDuration);
+      timeoutRef.current = setTimeout(
+        () => setPhase(reverseMode ? "deleting" : "typing"),
+        Math.max(initialDelay, pauseDuration)
+      );
       if (!reverseMode) {
-        // advance to next word when not deleting
         timeoutRef.current = setTimeout(() => setIdx((i) => i + 1), pauseDuration);
       }
     } else if (phase === "deleting") {
@@ -75,8 +73,20 @@ export default function TextType({
       }
     }
 
-    return clearRunningTimeout;
-  }, [text, idx, phase, output, typingSpeed, deletingSpeed, pauseDuration, variableSpeed, reverseMode, onSentenceComplete]);
+    return clearTimer;
+  }, [
+    text,
+    idx,
+    phase,
+    output,
+    typingSpeed,
+    deletingSpeed,
+    pauseDuration,
+    variableSpeed,
+    reverseMode,
+    onSentenceComplete,
+    initialDelay,
+  ]);
 
   return (
     <span className={className}>
