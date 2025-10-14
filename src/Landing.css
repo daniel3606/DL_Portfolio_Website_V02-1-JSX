@@ -48,14 +48,17 @@ html, body, #root {
 /* Scroll Navigation Arrows */
 .scroll-navigation {
   position: fixed;
-  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 100;
   display: flex;
   flex-direction: column;
-  gap: 10px;
   align-items: center;
+  pointer-events: none;
+}
+
+.scroll-navigation > * {
+  pointer-events: auto;
 }
 
 .scroll-arrow {
@@ -90,10 +93,18 @@ html, body, #root {
 }
 
 .scroll-arrow-up {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   animation: bounceUp 2s ease-in-out infinite;
 }
 
 .scroll-arrow-down {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
   animation: bounceDown 2s ease-in-out infinite;
 }
 
