@@ -28,6 +28,7 @@ function Landing() {
                       pauseDuration={1000}
                       showCursor={true}
                       cursorCharacter="|"
+                      textColors={["#8b5cf6", "#a78bfa", "#7c3aed"]}
                     />
                   </span>
                 </span>
