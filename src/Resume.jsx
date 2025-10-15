@@ -4,8 +4,8 @@ import './Resume.css';
 function Resume() {
   const handleDownload = () => {
     const link = document.createElement('a');
-    link.href = '/Daniel_Lim_Resume_v05.pdf';
-    link.download = 'Daniel_Lim_Resume_v05.pdf';
+    link.href = '/DanielLimResume_v06.pdf';
+    link.download = 'DanielLimResume_v06.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -23,7 +23,7 @@ function Resume() {
         
         <div className="pdf-viewer-container">
           <iframe
-            src="/Daniel_Lim_Resume_v05.pdf#toolbar=1&navpanes=1&scrollbar=1"
+            src="/DanielLimResume_v06.pdf#toolbar=1&navpanes=1&scrollbar=1"
             className="pdf-viewer"
             title="Daniel Lim Resume"
           />
