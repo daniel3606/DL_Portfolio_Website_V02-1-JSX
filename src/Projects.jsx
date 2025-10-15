@@ -13,18 +13,18 @@ function Projects() {
       githubUrl: "#"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      technologies: ["React", "Socket.io", "Express", "PostgreSQL"],
+      title: "Portfolio Website Still Under Construction",
+      description: "to be updated",
+      technologies: ["a", "b", "c", "d"],
       image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Weather Dashboard",
-      description: "Interactive weather dashboard with location-based forecasts, interactive maps, and detailed weather analytics.",
-      technologies: ["React", "OpenWeather API", "Chart.js", "Leaflet"],
-      image: "https://via.placeholder.com/400x250/6d28d9/ffffff?text=Weather+Dashboard",
+      title: "Portfolio Website Still Under Construction",
+      description: "to be updated",
+      technologies: ["a", "b", "c", "d"],
+      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
       liveUrl: "#",
       githubUrl: "#"
     }
