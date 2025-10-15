@@ -9,8 +9,8 @@ function Projects() {
       description: "Full-stack web application for artists to showcase their artwork, featuring user authentication, payment integration, and a responsive design.",
       technologies: ["React", "Node.js", "MongoDB"],
       image: "https://via.placeholder.com/400x250/8b5cf6/ffffff?text=E-Commerce+Platform",
-      liveUrl: "#",
-      githubUrl: "#"
+      liveUrl: "",
+      githubUrl: "https://github.com/daniel3606/ArtFit"
     },
     {
       title: "Portfolio Website Still Under Construction",
