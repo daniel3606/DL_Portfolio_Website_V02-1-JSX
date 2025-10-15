@@ -1,0 +1,21 @@
+let lastUpdateTime = 
+Date.now();
+let colorUpdateTimer = 0.0;
+
+let confit = {
+  SIM_RESOLUTION: 128,
+  DYE_RESOLUTION: 1440,
+  CAPTURE_RESOLUTION: 512,
+  DENSITY_DISSIPATION: 2,
+  VELOCITY_DISSIPATION: 2,
+  PRESSURE : 0.1,
+  PRESSURE_ITERATIOINS: 20,
+  CURL: 10,
+  SPLAT_RADIUS: 0.5,
+  SPLAT_FORCE: 6000,
+  SHADING: true,
+  COLOR_UPDATE_SPPED: 10,
+  PAUSED: false,
+  BACK_COLOR: { r: 0, g: 0, b: 0 },
+  TRANSPARENT: true,
+}

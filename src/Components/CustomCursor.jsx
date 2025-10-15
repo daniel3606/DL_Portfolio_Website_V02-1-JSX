@@ -6,7 +6,7 @@ function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
+    const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsVisible(true);
     };
@@ -51,3 +51,4 @@ function CustomCursor() {
 }
 
 export default CustomCursor;
+
