@@ -5,9 +5,9 @@ import './Projects.css';
 function Projects() {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe API"],
+      title: "ArtFit",
+      description: "Full-stack web application for artists to showcase their artwork, featuring user authentication, payment integration, and a responsive design.",
+      technologies: ["React", "Node.js", "MongoDB"],
       image: "https://via.placeholder.com/400x250/8b5cf6/ffffff?text=E-Commerce+Platform",
       liveUrl: "#",
       githubUrl: "#"
