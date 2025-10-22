@@ -1,0 +1,141 @@
+/* About Section Styles */
+.snap-page.about-section {
+  background: #000010;
+  padding: 100px 3rem 3rem 3rem;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-header h2 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 1rem;
+  font-family: 'Figtree', sans-serif;
+}
+
+.about-header p {
+  font-size: 1.2rem;
+  color: #cccccc;
+  font-family: 'Figtree', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+  font-family: 'Figtree', sans-serif;
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+.about-skills h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2rem;
+  font-family: 'Figtree', sans-serif;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.skill-item {
+  background: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  font-weight: 500;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-family: 'Figtree', sans-serif;
+}
+
+.skill-item:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .snap-page.about-section {
+    padding: 100px 1.5rem 1.5rem 1.5rem;
+  }
+  
+  .about-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .about-header p {
+    font-size: 1rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+  }
+
+  .about-skills h3 {
+    font-size: 1.8rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .skill-item {
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-header h2 {
+    font-size: 2rem;
+  }
+  
+  .about-content {
+    gap: 2rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+
+  .about-skills h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-item {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
