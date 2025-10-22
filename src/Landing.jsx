@@ -11,12 +11,10 @@ const JOB_TITLES = ["UI/UX Designer", "Frontend Developer", "Product Designer"];
 
 // Placeholder projects - you can replace with real data later
 const PROJECTS = [
-  { id: 1, title: "Project 1" },
-  { id: 2, title: "Project 2" },
-  { id: 3, title: "Project 3" },
-  { id: 4, title: "Project 4" },
-  { id: 5, title: "Project 5" },
-  { id: 6, title: "Project 6" },
+  { id: 1, title: "ArtFit" },
+  { id: 2, title: "Side Quest" },
+  { id: 3, title: "AR Hair Studio" },
+  { id: 4, title: "Scribble AI" },
 ];
 
 function Landing() {
