@@ -7,6 +7,7 @@ import "./Projects.css";
 import "./SideProjects.css";
 import "./About.css";
 import TextType from "./Components/TextType";
+import SplashCursor from "./Components/SplashCursor"; // ← add this
 
 const JOB_TITLES = ["UI/UX Designer", "Frontend Developer", "Product Designer"];
 
@@ -189,7 +190,6 @@ function Landing() {
                 ))}
               </div>
 
-
               {/* Indicators */}
               <div className="carousel-indicators">
                 {PROJECTS.map((_, index) => (
@@ -343,9 +343,27 @@ function Landing() {
         </div>
       </section>
       </div>
+
+      {/* === Fluid overlay on top of everything === */}
+      <SplashCursor
+        SIM_RESOLUTION={96}
+        DYE_RESOLUTION={512}
+        CAPTURE_RESOLUTION={256}
+        DENSITY_DISSIPATION={6}
+        VELOCITY_DISSIPATION={3}
+        PRESSURE={0.1}
+        PRESSURE_ITERATIONS={12}
+        CURL={2}
+        SPLAT_RADIUS={0.2}
+        SPLAT_FORCE={3000}
+        SHADING={true}
+        COLOR_UPDATE_SPEED={6}
+        BACK_COLOR={{ r: 0, g: 0, b: 0 }}
+        TRANSPARENT={true}
+        zIndex={9999}
+      />
     </>
   );
 }
 
 export default Landing;
-

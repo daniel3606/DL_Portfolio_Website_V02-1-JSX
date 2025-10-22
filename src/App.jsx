@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './Components/Navbar';
-import CustomCursor from './Components/CustomCursor';
 import Landing from './Landing';
 import Projects from './Projects';
 import StudyHelper from './StudyHelper';
@@ -13,7 +12,6 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <CustomCursor />
         <Navbar />
         <Routes>
           <Route path="/" element={<Landing />} />
