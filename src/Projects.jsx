@@ -8,7 +8,7 @@ function Projects() {
     {
       title: "ArtFit",
       description: "Full-stack web application for artists to showcase their artwork, featuring user authentication, payment integration, and a responsive design.",
-      technologies: ["React", "Node.js", "MongoDB"],
+      technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "CSS3", "JavaScript"],
       image: artfitCover,
       liveUrl: "https://www.artfit.dev/",
       githubUrl: "https://github.com/daniel3606/ArtFit"
@@ -16,7 +16,7 @@ function Projects() {
     {
       title: "Side Quest",
       description: "A mobile application that allows user to travel to different places and explore the local culture and attractions with personalized quests.",
-      technologies: ["Figma", "UI/UX", "React", "Node.js"],
+      technologies: ["Figma", "UI/UX", "CSS3"],
       image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
       liveUrl: "#",
       githubUrl: "#"

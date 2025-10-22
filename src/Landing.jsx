@@ -1,5 +1,6 @@
 // src/Landing.jsx
 import React, { useState, useEffect } from "react";
+import emailjs from 'emailjs-com';
 import "./Landing.css";
 import "./Hero.css";
 import "./Projects.css";
@@ -21,6 +22,14 @@ function Landing() {
   const [currentPage, setCurrentPage] = useState(0);
   const [currentProjectIndex, setCurrentProjectIndex] = useState(0);
   const totalPages = 3;
+  
+  // Contact form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
 
   const scrollToPage = (pageIndex) => {
     const container = document.querySelector('.snap-container');
@@ -88,6 +97,34 @@ function Landing() {
       }
     }
     // Center card doesn't need to do anything on click
+  };
+
+  // Contact form handlers
+  const handleFormChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.send(
+      'service_9m2beit',
+      'template_r58z7c7',
+      formData,
+      'IWauOUFwAXLu6hW7l'
+    ).then(
+      () => {
+        alert('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      },
+      (error) => {
+        console.error('Error sending email:', error);
+        alert('There was a problem sending your message.');
+      }
+    );
   };
 
   return (
@@ -182,7 +219,8 @@ function Landing() {
             <p>Personal projects and experiments</p>
           </div>
           
-          <div className="side-projects-grid">
+          <div className="side-projects-container">
+            <div className="side-projects-grid">
             <div className="side-project-card">
               <div className="project-icon">🚀</div>
               <h3>Project Alpha</h3>
@@ -227,43 +265,79 @@ function Landing() {
                 <a href="#" className="project-link">GitHub</a>
               </div>
             </div>
+            </div>
+            
+            {/* View All Side Projects Button */}
+            <div className="side-projects-cta">
+              <a href="/projects" className="view-all-side-projects-btn">
+                View All Side Projects
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Section 4 - About Me */}
+      {/* Section 4 - Contact Me */}
       <section className="snap-page about-section">
         <div className="section-content">
           <div className="about-header">
-            <h2>About Me</h2>
-            <p>Get to know me better</p>
+            <h2>Get In Touch</h2>
+            <p>I'm always interested in new opportunities and exciting projects. Let's discuss how we can work together!</p>
           </div>
           
           <div className="about-content">
-            <div className="about-text">
-              <p>
-                I'm a passionate developer and designer with a love for creating 
-                beautiful, functional digital experiences. With expertise in modern 
-                web technologies, I bring ideas to life through clean code and 
-                thoughtful design.
-              </p>
-              <p>
-                When I'm not coding, you can find me exploring new technologies, 
-                contributing to open source projects, or sharing knowledge with 
-                the developer community.
-              </p>
-            </div>
-            
-            <div className="about-skills">
-              <h3>Core Skills</h3>
-              <div className="skills-grid">
-                <div className="skill-item">React & JavaScript</div>
-                <div className="skill-item">UI/UX Design</div>
-                <div className="skill-item">Node.js</div>
-                <div className="skill-item">CSS & Styling</div>
-                <div className="skill-item">Git & Version Control</div>
-                <div className="skill-item">Problem Solving</div>
-              </div>
+            <div className="contact-form-container">
+              <form className="contact-form" onSubmit={handleFormSubmit}>
+                <div className="form-row">
+                  <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleFormChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="subject">Subject</label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleFormChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="message">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    rows={3}
+                    required
+                  />
+                </div>
+                <button type="submit" className="submit-button">
+                  Send Message
+                </button>
+              </form>
             </div>
           </div>
         </div>
