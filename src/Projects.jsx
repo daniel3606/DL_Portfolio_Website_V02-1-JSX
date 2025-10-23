@@ -1,29 +1,54 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Projects.css';
+import artfitCover from './assets/images/artfit_cover.png';
 
 function Projects() {
   const projects = [
     {
       title: "ArtFit",
       description: "Full-stack web application for artists to showcase their artwork, featuring user authentication, payment integration, and a responsive design.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      image: "https://via.placeholder.com/400x250/8b5cf6/ffffff?text=E-Commerce+Platform",
+      technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "CSS3", "JavaScript"],
+      image: artfitCover,
       liveUrl: "https://www.artfit.dev/",
       githubUrl: "https://github.com/daniel3606/ArtFit"
     },
     {
-      title: "Portfolio Website Still Under Construction",
-      description: "to be updated",
-      technologies: ["a", "b", "c", "d"],
+      title: "Side Quest",
+      description: "A mobile application that allows user to travel to different places and explore the local culture and attractions with personalized quests.",
+      technologies: ["Figma", "UI/UX", "CSS3"],
       image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
       liveUrl: "#",
       githubUrl: "#"
     },
     {
-      title: "Portfolio Website Still Under Construction",
+      title: "AR Hair Studio",
+      description: "A mobile application that allows user to try on different hairstyles and colors with the help of AR technology.",
+      technologies: ["Unity", "Blender", "8th Wall", "C#", "TypeScript"],
+      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "Scribble AI",
+      description: "A web application that allows user to draw a picture and the application will generate a AI-powered image of the picture.",
+      technologies: ["Python", "Pytorch", "Streamlit", "Hugging Face"],
+      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "To be updated",
       description: "to be updated",
-      technologies: ["a", "b", "c", "d"],
+      technologies: [],
+      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
+      liveUrl: "#",
+      githubUrl: "#"
+    },
+    {
+      title: "To be updated",
+      description: "to be updated",
+      technologies: [],
       image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
       liveUrl: "#",
       githubUrl: "#"
