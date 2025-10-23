@@ -55,15 +55,6 @@ function Projects() {
     }
   ];
 
-  const playgroundItems = [
-    {
-      title: "Study Helper",
-      description: "An interactive tool to help organize and optimize your study sessions.",
-      status: "Active",
-      link: "/study-helper"
-    },
-    // Add more playground items as needed
-  ];
 
   return (
     <div className="projects-container">
@@ -98,31 +89,6 @@ function Projects() {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Playground Section */}
-        <div className="playground-section">
-          <div className="playground-header">
-            <h2>Playground</h2>
-            <p>Experimental projects and explorations of new technologies and ideas.</p>
-          </div>
-          
-          <div className="playground-grid">
-            {playgroundItems.map((item, index) => (
-              <div key={index} className="playground-ticket">
-                <div className="ticket-status-badge">{item.status}</div>
-                <div className="ticket-content">
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </div>
-                <div className="ticket-footer">
-                  <Link to={item.link} className="ticket-button">
-                    Explore →
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </div>

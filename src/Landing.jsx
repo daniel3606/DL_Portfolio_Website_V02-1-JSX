@@ -4,7 +4,6 @@ import emailjs from 'emailjs-com';
 import "./Landing.css";
 import "./Hero.css";
 import "./Projects.css";
-import "./SideProjects.css";
 import "./About.css";
 import TextType from "./Components/TextType";
 import SplashCursor from "./Components/SplashCursor";
@@ -210,73 +209,7 @@ function Landing() {
         </div>
       </section>
 
-    {/* Section 3 - Side Projects */}
-    <section className="snap-page side-projects-section">
-      <div className="section-content">
-        <div className="side-projects-header">
-          <h2>Side Projects</h2>
-          <p>Personal projects and experiments</p>
-        </div>
-        
-        <div className="side-projects-container">
-          <div className="side-projects-grid">
-          <div className="side-project-card">
-            <div className="project-icon">🚀</div>
-            <h3>Project Alpha</h3>
-            <p>A web application built with React and Node.js that helps developers manage their daily tasks more efficiently.</p>
-            <div className="project-tech">
-              <span className="tech-tag">React</span>
-              <span className="tech-tag">Node.js</span>
-              <span className="tech-tag">MongoDB</span>
-            </div>
-            <div className="project-links">
-              <a href="#" className="project-link">Live Demo</a>
-              <a href="#" className="project-link">GitHub</a>
-            </div>
-          </div>
-          
-          <div className="side-project-card">
-            <div className="project-icon">🎨</div>
-            <h3>Design System</h3>
-            <p>A comprehensive design system and component library built with React and TypeScript for consistent UI development.</p>
-            <div className="project-tech">
-              <span className="tech-tag">React</span>
-              <span className="tech-tag">TypeScript</span>
-              <span className="tech-tag">Storybook</span>
-            </div>
-            <div className="project-links">
-              <a href="#" className="project-link">Live Demo</a>
-              <a href="#" className="project-link">GitHub</a>
-            </div>
-          </div>
-          
-          <div className="side-project-card">
-            <div className="project-icon">⚡</div>
-            <h3>API Tool</h3>
-            <p>A lightweight API testing and documentation tool that makes it easy to test endpoints and generate documentation.</p>
-            <div className="project-tech">
-              <span className="tech-tag">Vue.js</span>
-              <span className="tech-tag">Express</span>
-              <span className="tech-tag">PostgreSQL</span>
-            </div>
-            <div className="project-links">
-              <a href="#" className="project-link">Live Demo</a>
-              <a href="#" className="project-link">GitHub</a>
-            </div>
-          </div>
-          </div>
-          
-          {/* View All Side Projects Button */}
-          <div className="side-projects-cta">
-            <a href="/projects" className="view-all-side-projects-btn">
-              View All Side Projects
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Section 4 - Contact Me */}
+    {/* Section 3 - Contact Me */}
     <section className="snap-page about-section">
       <div className="section-content">
         <div className="about-header">

@@ -15,6 +15,7 @@ function Navbar() {
         <div className="navbar-menu">
           <Link to="/" className={`navbar-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
           <Link to="/projects" className={`navbar-link ${location.pathname === '/projects' ? 'active' : ''}`}>Projects</Link>
+          <Link to="/side-projects" className={`navbar-link ${location.pathname === '/side-projects' ? 'active' : ''}`}>Side Projects</Link>
           <Link to="/additional-info" className={`navbar-link ${location.pathname === '/additional-info' ? 'active' : ''}`}>Additional Info</Link>
           <Link to="/resume" className={`navbar-link ${location.pathname === '/resume' ? 'active' : ''}`}>Resume</Link>
           <Link to="/contact" className={`navbar-button ${location.pathname === '/contact' ? 'active' : ''}`}>Contact Me</Link>

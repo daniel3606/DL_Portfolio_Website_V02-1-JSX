@@ -4,6 +4,7 @@ import Navbar from './Components/Navbar';
 import SplashCursor from './Components/SplashCursor';
 import Landing from './Landing';
 import Projects from './Projects';
+import SideProjects from './SideProjects';
 import StudyHelper from './StudyHelper';
 import Resume from './Resume';
 import Contact from './Contact';
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/side-projects" element={<SideProjects />} />
           <Route path="/study-helper" element={<StudyHelper />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="/contact" element={<Contact />} />

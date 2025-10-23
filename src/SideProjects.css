@@ -1,23 +1,24 @@
-/* Side Projects Section Styles */
-.snap-page.side-projects-section {
-  background: #000010;
+/* Side Projects Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+
+.side-projects-container {
+  min-height: 100vh;
+  background-color: #000010;
   padding: 100px 3rem 3rem 3rem;
+}
+
+.side-projects-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .side-projects-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
-.side-projects-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-.side-projects-header h2 {
-  font-size: 2.5rem;
+.side-projects-header h1 {
+  font-size: 4.5rem;
   font-weight: 500;
   color: white;
   margin-bottom: 1rem;
@@ -28,58 +29,70 @@
   font-size: 1.2rem;
   color: #cccccc;
   font-family: 'Figtree', sans-serif;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
 }
 
 .side-projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  margin-bottom: 4rem;
 }
 
 .side-project-card {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  border-radius: 20px;
-  padding: 2.5rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  position: relative;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
-}
-
-.side-project-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #8b5cf6, #7c3aed, #ec4899);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.side-project-card:hover::before {
-  opacity: 1;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
 .side-project-card:hover {
-  transform: translateY(-10px);
-  border-color: rgba(139, 92, 246, 0.4);
-  box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
 }
 
 .project-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: block;
+  font-size: 4rem;
+  opacity: 0.8;
 }
 
-.side-project-card h3 {
+.project-status {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: white;
+  font-family: 'Figtree', sans-serif;
+}
+
+.project-content {
+  padding: 2rem;
+}
+
+.project-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
@@ -87,14 +100,15 @@
   font-family: 'Figtree', sans-serif;
 }
 
-.side-project-card p {
+.project-description {
+  font-size: 1rem;
   color: #cccccc;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   font-family: 'Figtree', sans-serif;
 }
 
-.project-tech {
+.project-technologies {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
@@ -102,151 +116,157 @@
 }
 
 .tech-tag {
-  background: rgba(139, 92, 246, 0.1);
-  color: #8b5cf6;
   padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  border: 1px solid rgba(139, 92, 246, 0.2);
+  font-size: 0.875rem;
+  color: #cccccc;
+  background: rgba(255, 255, 255, 0.05);
   font-family: 'Figtree', sans-serif;
 }
 
-.project-links {
+.project-actions {
   display: flex;
   gap: 1rem;
 }
 
-.project-link {
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  font-family: 'Figtree', sans-serif;
-  flex: 1;
-  text-align: center;
-}
-
-.project-link:hover {
-  background: linear-gradient(135deg, #7c3aed, #6d28d9);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-}
-
-/* CTA Button */
-.side-projects-cta {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.view-all-side-projects-btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
-  color: white;
+.project-button {
   padding: 0.75rem 1.5rem;
   border-radius: 25px;
-  text-decoration: none;
-  font-size: 1rem;
   font-weight: 600;
+  text-decoration: none;
   transition: all 0.3s ease;
   font-family: 'Figtree', sans-serif;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.875rem;
 }
 
-.view-all-side-projects-btn:hover {
-  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+.project-button.primary {
+  color: white;
+  border: 2px solid transparent;
+}
+
+.project-button.primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-button.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #cccccc;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  cursor: not-allowed;
+}
+
+.side-projects-footer {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 3rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.side-projects-footer h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+  font-family: 'Figtree', sans-serif;
+}
+
+.side-projects-footer p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Figtree', sans-serif;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Figtree', sans-serif;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  border: 2px solid transparent;
+}
+
+.footer-link:hover {
+  color: white;
+  background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+  border-color: #8b5cf6;
+  transform: translateY(-2px);
+}
+
+/* Disabled project link for landing page */
+.project-link.disabled {
+  color: #666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.project-link.disabled:hover {
+  color: #666;
+  background: none;
+  transform: none;
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .snap-page.side-projects-section {
+  .side-projects-container {
     padding: 100px 1.5rem 1.5rem 1.5rem;
   }
   
-  .side-projects-header h2 {
-    font-size: 2rem;
+  .side-projects-header h1 {
+    font-size: 3rem;
   }
   
   .side-projects-header p {
     font-size: 1rem;
   }
-
-  .side-projects-container {
-    gap: 1.5rem;
-  }
-
+  
   .side-projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-
-  .side-project-card {
+  
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .side-projects-footer {
     padding: 2rem;
   }
-
-  .project-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .side-project-card h3 {
-    font-size: 1.3rem;
-  }
-
-  .side-project-card p {
-    font-size: 0.95rem;
-  }
-
-  .project-links {
+  
+  .footer-links {
     flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .project-link {
-    padding: 0.6rem 1rem;
-    font-size: 0.85rem;
+    align-items: center;
   }
 }
 
 @media (max-width: 480px) {
-  .side-projects-header h2 {
-    font-size: 2rem;
+  .side-projects-header h1 {
+    font-size: 2.5rem;
   }
-
-  .side-projects-container {
-    gap: 1rem;
+  
+  .project-content {
+    padding: 1rem;
   }
-
-  .side-project-card {
+  
+  .side-projects-footer {
     padding: 1.5rem;
-  }
-
-  .project-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-
-  .side-project-card h3 {
-    font-size: 1.2rem;
-  }
-
-  .side-project-card p {
-    font-size: 0.9rem;
-  }
-
-  .tech-tag {
-    font-size: 0.75rem;
-    padding: 0.2rem 0.6rem;
-  }
-
-  .project-link {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
   }
 }
