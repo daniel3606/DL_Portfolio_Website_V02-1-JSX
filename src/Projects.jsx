@@ -17,7 +17,7 @@ function Projects() {
       title: "Side Quest",
       description: "A mobile application that allows user to travel to different places and explore the local culture and attractions with personalized quests.",
       technologies: ["Figma", "UI/UX", "CSS3"],
-      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
+      image: "https://www.figma.com/design/FXXfsnlbR1YK03vDnxAZdQ/SideQuest-Updates?node-id=0-1&p=f&t=E7BaKMuXvO7EHaPg-0",
       liveUrl: "#",
       githubUrl: "#"
     },
