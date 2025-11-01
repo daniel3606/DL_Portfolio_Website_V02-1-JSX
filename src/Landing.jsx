@@ -208,8 +208,18 @@ function Landing() {
           </div>
         </div>
       </section>
+    
+    {/* Section 3 - Side Projects*/}
+    <section className="snap-page about-section">
+      <div className="section-content">
+        <div className="about-header">
+          <h3>Side Projects</h3>
+          <p>All the projects that I play around in this website!</p>
+        </div>
+      </div>
+    </section> 
 
-    {/* Section 3 - Contact Me */}
+    {/* Section 4 - Contact Me */}
     <section className="snap-page about-section">
       <div className="section-content">
         <div className="about-header">

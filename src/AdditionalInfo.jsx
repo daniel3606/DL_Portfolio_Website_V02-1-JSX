@@ -2,24 +2,74 @@ import React from 'react';
 import './AdditionalInfo.css';
 
 function AdditionalInfo() {
-  const interests = [
-    { icon: '🥽', name: 'AR/VR Development', description: 'Passionate about creating immersive experiences and exploring the future of spatial computing' },
-    { icon: '🎮', name: 'Gaming', description: 'Love exploring virtual worlds and game design principles' },
-    { icon: '🤖', name: 'AI & Machine Learning', description: 'Fascinated by artificial intelligence and its potential to transform technology' },
-    { icon: '📱', name: 'Mobile Development', description: 'Building intuitive and performant mobile applications' },
-    { icon: '🎨', name: 'Creative Coding', description: 'Combining art and code to create interactive visual experiences' },
-    { icon: '🚀', name: 'Space Tech', description: 'Following developments in space exploration and satellite technology' }
+  const playlists = [
+    {
+      id: 'design-energy',
+      title: 'Design Energy',
+      description: 'High-energy beats for rapid ideation sessions.',
+      url: 'https://open.spotify.com/playlist/37i9dQZF1DXa8NOEUWPn9W',
+      cover: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80&w=640&h=640'
+    },
+    {
+      id: 'night-coding',
+      title: 'Midnight Coding',
+      description: 'Ambient electronica to keep the flow going when the world is quiet.',
+      url: 'https://open.spotify.com/playlist/37i9dQZF1DX8Uebhn9wzrS',
+      cover: 'https://images.unsplash.com/photo-1515523110800-9415d13b84a7?auto=format&fit=crop&q=80&w=640&h=640'
+    },
+    {
+      id: 'sunrise-vibes',
+      title: 'Sunrise Vibes',
+      description: 'Soft indie tunes for the early morning journaling ritual.',
+      url: 'https://open.spotify.com/playlist/37i9dQZF1DX0UrRvztWcAU',
+      cover: 'https://images.unsplash.com/photo-1524678714210-9917a6c619c0?auto=format&fit=crop&q=80&w=640&h=640'
+    },
+    {
+      id: 'weekend-drive',
+      title: 'Weekend Drive',
+      description: 'Feel-good tracks for city strolls with the Ricoh GR III in hand.',
+      url: 'https://open.spotify.com/playlist/37i9dQZF1DX9BXb6GsGCLl',
+      cover: 'https://images.unsplash.com/photo-1508061253366-f7da158bca21?auto=format&fit=crop&q=80&w=640&h=640'
+    }
   ];
 
-  const hobbies = [
-    { icon: '📸', name: 'Photography' },
-    { icon: '✈️', name: 'Travel' },
-    { icon: '🎵', name: 'Music' },
-    { icon: '📚', name: 'Reading' },
-    { icon: '🏃', name: 'Fitness' },
-    { icon: '🎬', name: 'Film & Cinema' },
-    { icon: '🍳', name: 'Cooking' },
-    { icon: '🎯', name: 'Gaming' }
+  const galleryPhotos = [
+    {
+      id: 'street-lights',
+      src: 'https://images.unsplash.com/photo-1526403226198-61353de98ee5?auto=format&fit=crop&q=80&w=1200',
+      title: 'Neon Alley',
+      location: 'Shibuya, Tokyo'
+    },
+    {
+      id: 'coffee-corner',
+      src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200',
+      title: 'Morning Ritual',
+      location: 'Daegu, South Korea'
+    },
+    {
+      id: 'sunrise-city',
+      src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=1200',
+      title: 'Golden Hour Commute',
+      location: 'San Francisco, USA'
+    },
+    {
+      id: 'retro-ride',
+      src: 'https://images.unsplash.com/photo-1529336953122-2d95d27cb675?auto=format&fit=crop&q=80&w=1200',
+      title: 'Weekend Cruise',
+      location: 'Los Angeles, USA'
+    },
+    {
+      id: 'seaside-breeze',
+      src: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&q=80&w=1200',
+      title: 'Soft Tides',
+      location: 'Jeju Island, South Korea'
+    },
+    {
+      id: 'midnight-snack',
+      src: 'https://images.unsplash.com/photo-1428278779356-1efe25c38d5d?auto=format&fit=crop&q=80&w=1200',
+      title: 'Late Night Eats',
+      location: 'Seoul, South Korea'
+    }
   ];
 
   return (
@@ -27,7 +77,7 @@ function AdditionalInfo() {
       <div className="additional-info-content">
         <div className="info-header">
           <h1>Beyond the Code</h1>
-          <p>Get to know the person behind the projects - my passions, interests, and what makes me tick.</p>
+          <p>Get to know the person behind the projects.</p>
         </div>
 
         <div className="info-sections">
@@ -35,72 +85,61 @@ function AdditionalInfo() {
           <section className="info-section about-section">
             <h2>About Me</h2>
             <p className="about-text">
-              Hey there! 👋 I'm not just about code and pixels. When I'm not building cool projects or exploring the latest tech trends, 
-              you'll find me diving deep into the world of AR/VR, capturing moments through my camera lens, or planning my next adventure. 
-              I believe that the best developers are curious souls who draw inspiration from diverse experiences and perspectives.
+              Hey there! I'm not just about code and pixels. In this section I will share who I am outside of work.
+              I love <b>traveling</b>, <b>photography</b>, and <b>music</b>. I also love games - which is why I am interested in Unity and Unreal Engine.
+
             </p>
             <p className="about-text">
-              My journey in tech has been driven by a genuine fascination with how technology can create meaningful connections and 
-              solve real-world problems. Whether it's developing immersive VR experiences or crafting intuitive user interfaces, 
-              I'm always excited to push boundaries and learn something new.
+              In the upcoming sections, I will share details about my interests and hobbies. 
             </p>
           </section>
 
-          {/* Interests Section */}
-          <section className="info-section">
-            <h2>Tech Interests & Passions</h2>
-            <div className="interests-detailed-grid">
-              {interests.map((interest, index) => (
-                <div key={index} className="interest-detailed-card">
-                  <div className="interest-detailed-icon">{interest.icon}</div>
-                  <h3>{interest.name}</h3>
-                  <p>{interest.description}</p>
-                </div>
-              ))}
+          {/* Spotify Playlists */}
+          <section className="info-section playlist-section">
+            <div className="section-header">
+              <h2>My Playlists</h2>
+              <p>Curated Spotify playlists that fuel my focus, creativity, and travel adventures.</p>
+            </div>
+            <div className="playlist-scroll">
+              <div className="playlist-list">
+                {playlists.map((playlist) => (
+                  <a
+                    key={playlist.id}
+                    href={playlist.url}
+                    className="playlist-card"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <div className="playlist-cover">
+                      <img src={playlist.cover} alt={`${playlist.title} cover`} loading="lazy" />
+                    </div>
+                    <div className="playlist-info">
+                      <h3>{playlist.title}</h3>
+                      <p>{playlist.description}</p>
+                      <span className="playlist-cta">Listen on Spotify</span>
+                    </div>
+                  </a>
+                ))}
+              </div>
             </div>
           </section>
 
-          {/* Hobbies Section */}
-          <section className="info-section">
-            <h2>Hobbies & Activities</h2>
-            <div className="hobbies-grid">
-              {hobbies.map((hobby, index) => (
-                <div key={index} className="hobby-card">
-                  <span className="hobby-icon">{hobby.icon}</span>
-                  <span className="hobby-name">{hobby.name}</span>
-                </div>
-              ))}
+          {/* Photo Gallery */}
+          <section className="info-section gallery-section">
+            <div className="section-header">
+              <h2>Ricoh GR III Photo Stories</h2>
+              <p>Snapshots from daily explorations. All images were captured handheld with my Ricoh GR III.</p>
             </div>
-          </section>
-
-          {/* Photo Gallery Placeholder Section */}
-          <section className="info-section">
-            <h2>Photo Gallery</h2>
-            <div className="photo-gallery-placeholder">
-              <div className="gallery-item">
-                <div className="placeholder-box">
-                  <span>📷</span>
-                  <p>Add your favorite photos here!</p>
-                </div>
-              </div>
-              <div className="gallery-item">
-                <div className="placeholder-box">
-                  <span>🌍</span>
-                  <p>Travel memories</p>
-                </div>
-              </div>
-              <div className="gallery-item">
-                <div className="placeholder-box">
-                  <span>💻</span>
-                  <p>Tech adventures</p>
-                </div>
-              </div>
-              <div className="gallery-item">
-                <div className="placeholder-box">
-                  <span>🎨</span>
-                  <p>Creative moments</p>
-                </div>
-              </div>
+            <div className="photo-gallery">
+              {galleryPhotos.map((photo) => (
+                <figure key={photo.id} className="photo-card">
+                  <img src={photo.src} alt={photo.title} loading="lazy" />
+                  <figcaption>
+                    <h4>{photo.title}</h4>
+                    <span>{photo.location}</span>
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </section>
         </div>

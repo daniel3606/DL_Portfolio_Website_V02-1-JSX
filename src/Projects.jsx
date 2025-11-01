@@ -6,52 +6,84 @@ import artfitCover from './assets/images/artfit_cover.png';
 function Projects() {
   const projects = [
     {
+      id: 1,
       title: "ArtFit",
-      description: "Full-stack web application for artists to showcase their artwork, featuring user authentication, payment integration, and a responsive design.",
+      shortDescription: "Full-stack web application for artists to showcase their artwork, featuring user authentication, payment integration, and a responsive design.",
+      detailedDescription: "A comprehensive platform for artists to showcase and sell their artwork online. Features robust user authentication, secure payment processing, artist profiles, and an intuitive gallery system.",
       technologies: ["React", "Node.js", "Express", "MongoDB", "JWT", "CSS3", "JavaScript"],
+      tags: ["Full-Stack", "E-commerce", "Art Platform", "Authentication", "Payment"],
+      features: ["User Authentication", "Payment Integration", "Artist Profiles", "Gallery System", "Responsive Design"],
       image: artfitCover,
       liveUrl: "https://www.artfit.dev/",
-      githubUrl: "https://github.com/daniel3606/ArtFit"
+      githubUrl: "https://github.com/daniel3606/ArtFit",
+      status: "Live",
+      color: "#8b5cf6",
+      completionDate: "TBD",
+      category: "Web Application"
     },
     {
+      id: 2,
       title: "Side Quest",
-      description: "A mobile application that allows user to travel to different places and explore the local culture and attractions with personalized quests.",
-      technologies: ["Figma", "UI/UX", "CSS3"],
-      image: "https://www.figma.com/design/FXXfsnlbR1YK03vDnxAZdQ/SideQuest-Updates?node-id=0-1&p=f&t=E7BaKMuXvO7EHaPg-0",
+      shortDescription: "A mobile application that allows user to travel to different places and explore the local culture and attractions with personalized quests.",
+      detailedDescription: "An innovative travel companion app that gamifies exploration through personalized quests. Users discover local culture, hidden gems, and attractions through interactive challenges and location-based activities.",
+      technologies: ["Figma", "UI/UX", "CSS3", "JavaScript", "Mobile Design"],
+      tags: ["Mobile App", "Travel", "UI/UX", "Gamification", "Location-Based"],
+      features: ["Personalized Quests", "Location Tracking", "Cultural Discovery", "Interactive Challenges", "Social Features"],
+      image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2100",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
+      status: "In Development",
+      color: "#06b6d4",
+      completionDate: "2024",
+      category: "Mobile Application"
     },
     {
+      id: 3,
       title: "AR Hair Studio",
-      description: "A mobile application that allows user to try on different hairstyles and colors with the help of AR technology.",
-      technologies: ["Unity", "Blender", "8th Wall", "C#", "TypeScript"],
-      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
+      shortDescription: "A mobile application that allows user to try on different hairstyles and colors with the help of AR technology.",
+      detailedDescription: "An immersive augmented reality application that revolutionizes hair styling. Users can virtually try on different hairstyles, colors, and cuts using advanced AR technology and realistic hair simulation.",
+      technologies: ["Unity", "Blender", "8th Wall", "C#", "TypeScript", "AR Core"],
+      tags: ["AR/VR", "Beauty Tech", "Mobile App", "3D Modeling", "Real-time"],
+      features: ["AR Hair Try-On", "Color Simulation", "Real-time Tracking", "3D Hair Models", "Photo Capture"],
+      image: "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2069",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
+      status: "In Development",
+      color: "#06b6d4",
+      completionDate: "TBD",
+      category: "Mobile Application"
     },
     {
+      id: 4,
       title: "Scribble AI",
-      description: "A web application that allows user to draw a picture and the application will generate a AI-powered image of the picture.",
-      technologies: ["Python", "Pytorch", "Streamlit", "Hugging Face"],
-      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
+      shortDescription: "A web application that allows user to draw a picture and the application will generate a AI-powered image of the picture.",
+      detailedDescription: "An innovative AI-powered drawing application that transforms simple sketches into detailed, professional-quality images using advanced machine learning models and computer vision techniques.",
+      technologies: ["Python", "PyTorch", "Streamlit", "Hugging Face", "OpenCV"],
+      tags: ["AI/ML", "Computer Vision", "Image Generation", "Deep Learning", "Creative"],
+      features: ["Sketch to Image", "AI Enhancement", "Style Transfer", "Real-time Processing", "Export Options"],
+      image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2032",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
+      status: "In Development",
+      color: "#ef4444",
+      completionDate: "TBD",
+      category: "AI Application"
     },
     {
-      title: "To be updated",
-      description: "to be updated",
-      technologies: [],
-      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
+      id: 5,
+      title: "Future Projects",
+      shortDescription: "New exciting projects are in development. Stay tuned for more innovative solutions and creative applications!",
+      detailedDescription: "Upcoming projects will explore cutting-edge technologies including blockchain applications, advanced AI integrations, IoT solutions, and next-generation web experiences.",
+      technologies: ["React", "Node.js", "Blockchain", "AI/ML", "IoT"],
+      tags: ["Innovation", "Emerging Tech", "Blockchain", "Next-Gen", "Experimental"],
+      features: ["Cutting-edge Tech", "Innovation Focus", "Scalable Solutions", "User-Centric", "Future-Ready"],
+      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2069",
       liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "To be updated",
-      description: "to be updated",
-      technologies: [],
-      image: "https://via.placeholder.com/400x250/7c3aed/ffffff?text=Task+Management",
-      liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
+      status: "Planning",
+      color: "#10b981",
+      completionDate: "TBD",
+      category: "Future Projects"
     }
   ];
 
@@ -70,21 +102,49 @@ function Projects() {
               <div className="project-image">
                 <img src={project.image} alt={project.title} />
                 <div className="project-overlay">
-                  <a href={project.liveUrl} className="project-link" target="_blank" rel="noopener noreferrer">
-                    Live Demo
-                  </a>
-                  <a href={project.githubUrl} className="project-link" target="_blank" rel="noopener noreferrer">
-                    GitHub
-                  </a>
+                  {project.liveUrl !== "#" ? (
+                    <a href={project.liveUrl} className="project-link" target="_blank" rel="noopener noreferrer">
+                      Live Demo
+                    </a>
+                  ) : (
+                    <span className="project-link disabled">Coming Soon</span>
+                  )}
+                  {project.githubUrl !== "#" ? (
+                    <a href={project.githubUrl} className="project-link" target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </a>
+                  ) : (
+                    <span className="project-link disabled">Private</span>
+                  )}
                 </div>
               </div>
               <div className="project-info">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                <div className="project-header">
+                  <h3 className="project-title">{project.title}</h3>
+                  <span className="project-category" style={{ color: project.color }}>
+                    {project.category}
+                  </span>
+                </div>
+                <p className="project-description">{project.shortDescription}</p>
+                <div className="project-tags">
+                  {project.tags.map((tag, index) => (
+                    <span key={index} className="tag" style={{ 
+                      backgroundColor: project.color + '20',
+                      color: project.color,
+                      borderColor: project.color + '40'
+                    }}>
+                      {tag}
+                    </span>
+                  ))}
+                </div>
                 <div className="project-technologies">
                   {project.technologies.map((tech, techIndex) => (
                     <span key={techIndex} className="tech-tag">{tech}</span>
                   ))}
+                </div>
+                <div className="project-meta">
+                  <span className="completion-date">Completed: {project.completionDate}</span>
+                  <span className="feature-count">{project.features.length} Features</span>
                 </div>
               </div>
             </div>

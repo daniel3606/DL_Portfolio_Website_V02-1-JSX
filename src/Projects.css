@@ -1,4 +1,5 @@
 /* Projects Page Styles */
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
 
 /* Landing Page Carousel Styles */
 .snap-page.projects-section {
@@ -45,6 +46,27 @@
   margin-bottom: 24px;
 }
 
+/* Horizontal scroll for Featured Projects on Landing */
+.horizontal-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-list {
+  display: flex;
+  gap: 24px;
+  padding: 8px 12px 8px 12px;
+  align-items: center;
+}
+
 .snap-page.projects-section .project-card {
   position: absolute;
   background: rgba(255, 255, 255, 0.05);
@@ -53,6 +75,16 @@
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   backdrop-filter: blur(10px);
+}
+
+/* Non-absolute horizontal scroll variant */
+.snap-page.projects-section .hs-card {
+  position: relative;
+  flex: 0 0 auto;
+  width: 450px;
+  height: 300px;
+  scroll-snap-align: center;
+  box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
 }
 
 .snap-page.projects-section .project-card.center {
@@ -88,6 +120,11 @@
   transform: translateX(0) scale(1.02);
   box-shadow: 0 25px 70px rgba(139, 92, 246, 0.5);
   border-color: rgba(139, 92, 246, 0.8);
+}
+
+.snap-page.projects-section .hs-card:hover {
+  box-shadow: 0 25px 70px rgba(139, 92, 246, 0.4);
+  border-color: rgba(139, 92, 246, 0.6);
 }
 
 .snap-page.projects-section .project-card.left:hover {
@@ -192,6 +229,11 @@
     margin-bottom: 20px;
   }
 
+  .snap-page.projects-section .hs-card {
+    width: 300px;
+    height: 250px;
+  }
+
   .carousel-indicators {
     margin-top: 0;
   }
@@ -242,6 +284,11 @@
   .carousel-wrapper {
     height: 320px;
     margin-bottom: 16px;
+  }
+
+  .snap-page.projects-section .hs-card {
+    width: 250px;
+    height: 200px;
   }
 
   .carousel-indicators {
@@ -374,15 +421,16 @@
 .project-overlay .project-link {
   background: linear-gradient(135deg, #8b5cf6, #7c3aed);
   color: white;
-  padding: 0.3rem 0.05rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
   font-family: 'Figtree', sans-serif;
   font-size: 0.9rem;
-  min-width: auto;
+  min-width: 120px;
   display: inline-block;
+  text-align: center;
 }
 
 .project-link:hover {
@@ -390,39 +438,114 @@
   transform: translateY(-2px);
 }
 
+.project-link.disabled {
+  background: rgba(255, 255, 255, 0.1);
+  color: #888;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.project-link.disabled:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .project-info {
   padding: 1.5rem;
 }
 
-.project-info h3 {
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  gap: 1rem;
+}
+
+.project-category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-family: 'Figtree', sans-serif;
+  opacity: 0.9;
+  white-space: nowrap;
+}
+
+.project-title {
   font-size: 1.5rem;
   font-weight: 600;
   color: white;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   font-family: 'Figtree', sans-serif;
+  flex: 1;
 }
 
-.project-info p {
+.project-description {
   color: #cccccc;
   line-height: 1.6;
   margin-bottom: 1rem;
   font-family: 'Figtree', sans-serif;
 }
 
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: 'Figtree', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
 .project-technologies {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .tech-tag {
   background: rgba(139, 92, 246, 0.2);
   color: #8b5cf6;
   padding: 0.25rem 0.75rem;
+  border: 1px solid rgba(139, 92, 246, 0.4);
   border-radius: 15px;
   font-size: 0.875rem;
   font-weight: 500;
   font-family: 'Figtree', sans-serif;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.completion-date,
+.feature-count {
+  font-size: 0.75rem;
+  color: #aaa;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 500;
+}
+
+.feature-count {
+  color: #8b5cf6;
 }
 
 
@@ -456,12 +579,24 @@
     padding: 1.25rem;
   }
 
-  .project-info h3 {
+  .project-title {
     font-size: 1.3rem;
   }
 
-  .project-info p {
+  .project-description {
     font-size: 0.95rem;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .project-meta {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
   }
 
 }
